@@ -7,7 +7,7 @@ console.log(amigos);
 function adicionarAmigo() {
     const nome = document.getElementById("amigo").value.trim();
     if(nome == "") {
-        alert("O campo 'Digite um nome' não pode ser vazio");
+        alert("Por favor, insira um nome.");
         return;
     }
     if(nome.includes(["0","1","2","3","4","5","6","7","8","9"])) {
@@ -20,5 +20,8 @@ function adicionarAmigo() {
     }
     amigos.push(nome);
     console.log(amigos);
+    document.getElementById("amigo").value = "";
+    // atualizarAmigos();
 }
 
+// function atualizarAmigos()
