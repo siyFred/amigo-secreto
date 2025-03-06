@@ -21,7 +21,20 @@ function adicionarAmigo() {
     amigos.push(nome);
     console.log(amigos);
     document.getElementById("amigo").value = "";
-    // atualizarAmigos();
+    atualizarAmigos();
 }
 
-// function atualizarAmigos()
+function atualizarAmigos() {
+    const lista = document.getElementById("listaAmigos");
+    lista.innerHTML = "";
+    // for(let i = 0; i < amigos.length; i++) {
+    //     const li = document.createElement("li");
+    //     li.innerHTML = amigos[i];
+    //     lista.appendChild(item);
+    // }
+    amigos.forEach((amigo) => {
+        const li = document.createElement("li");
+        li.innerHTML = amigo;
+        lista.appendChild(li);
+    });
+}
