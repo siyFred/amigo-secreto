@@ -4,6 +4,22 @@ const amigos = [];
 
 console.log(amigos);
 
+// Facilitar a adição de amigos ao pressionar a tecla Enter
+document.getElementById("amigo").addEventListener("keypress", function(event) {
+    if(event.key == "Enter") {
+        event.preventDefault();
+        document.getElementById("adicionarAmigo").click();
+    }
+});
+
+// Facilitar o sorteio ao pressionar a tecla Enter
+document.addEventListener("keypress", function(event) {
+    if(event.key == "Enter") {
+        event.preventDefault();
+        document.getElementById("sortearAmigo").click();
+    }
+});
+
 function adicionarAmigo() {
     const nome = document.getElementById("amigo").value.trim();
     if(nome == "") {
